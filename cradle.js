@@ -5,12 +5,12 @@ import cradleCharacterSheet from './modules/sheets/cradleCharacterSheet.js'
 Hooks.once('init', async () => {
   console.log('CRADLE | Initializing Iteration 110 Cradle')
 
-  CONGIFG.CRADLE = CRADLE
+  CONFIG.CRADLE = CRADLE
   CONFIG.INIT = true
   CONFIG.Actor.documentClass = cradleActor
 
   const DocumentSheetConfig = foundry.applications.apps.DocumentSheetConfig
-  DocumentSheetConfig.uregisterSheet(
+  DocumentSheetConfig.unregisterSheet(
     Actor,
     'core',
     foundry.appv1.sheets.ActorSheet,

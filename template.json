@@ -1,9 +1,9 @@
 {
     "Actor": {
         "types":[
-            "character"
+            "PlayerCharacter"
         ],
-        "character": {
+        "PlayerCharacter": {
             "race": 0,
             "background":0,
             "bloodline":0,
@@ -25,47 +25,53 @@
                 "path": "",
                 "techniques":1
             },
-            "abiltiyScores":{
-                "phsyical": {
+            "abilityScores":{
+                "physical": {
                     "strength":
                     {
-                        "start":0,
+                        "base":0,
                         "raised":0,
-                        "bonus":0
+                        "bonus":0,
+                        "total":0
                     },
                     "agility":
                     {
-                        "start":0,
+                        "base":0,
                         "raised":0,
-                        "bonus":0
+                        "bonus":0,
+                        "total":0
                     }
                 },
                 "mental": {
                     "intellect":
                     {
-                        "start":0,
+                        "base":0,
                         "raised":0,
-                        "bonus":0
+                        "bonus":0,
+                        "total":0
                     },
                     "willpower":
                     {
-                        "start":0,
+                        "base":0,
                         "raised":0,
-                        "bonus":0
+                        "bonus":0,
+                        "total":0
                     }
                 },
                 "spiritual": {
                     "awareness":
                     {
-                        "start":0,
+                        "base":0,
                         "raised":0,
-                        "bonus":0
+                        "bonus":0,
+                        "total":0
                     },
                     "presence":
                     {
-                        "start":0,
+                        "base":0,
                         "raised":0,
-                        "bonus":0
+                        "bonus":0,
+                        "total":0
                     }
                 }
             },

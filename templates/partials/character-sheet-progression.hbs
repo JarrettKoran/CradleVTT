@@ -10,27 +10,11 @@
         </div>
     </div>
 
-    <div class="charexpbox">
-
-        <div class="charprogressbox">
-            <div class="charprogresslbl">{{localize "CRADLE.System.Exp"}}</div>
-            <div class="charinputbox">
-                <input class="charprogressinput" type="number" value="{{system.experience.spentExp}}" disabled> /
-                <input class="charprogressinput" type="number" name="system.experience.earndExp"
-                    value="{{system.experience.earndExp}}">
-                <a class="charprogressbntlink">
-                    <div class="charprogressbnt">{{localize "CRADLE.System.addEvent"}}</div>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
     <div class="form-group subMain">
         <div class="menuhrbox" style="width: 25px;">
             <hr class="menuhr">
         </div>
-        {{localize "CRADLE.System.atriProg"}}
+        {{localize "CRADLE.System.abilityProg"}}
         <div class="menuhrbox" style="flex: 1;">
             <hr class="menuhr">
         </div>
@@ -39,16 +23,13 @@
     <div class="charprogressattmenubox">
         <nav class="tabs2 menuTabs" data-group="secondary-tabs">
             <a class="item" data-tab="tab2-1" data-group="secondary-tabs">
-                <div class="charprogressatttypebnt">{{localize "CRADLE.System.bodySkill"}}</div>
+                <div class="charprogressatttypebnt">{{localize "CRADLE.System.PHYS"}}</div>
             </a>
             <a class="item" data-tab="tab2-2" data-group="secondary-tabs">
-                <div class="charprogressatttypebnt">{{localize "CRADLE.System.mindSkill"}}</div>
+                <div class="charprogressatttypebnt">{{localize "CRADLE.System.MEN"}}</div>
             </a>
             <a class="item" data-tab="tab2-3" data-group="secondary-tabs">
-                <div class="charprogressatttypebnt">{{localize "CRADLE.System.sociSkill"}}</div>
-            </a>
-            <a class="item" data-tab="tab2-4" data-group="secondary-tabs">
-                <div class="charprogressatttypebnt">{{localize "CRADLE.System.specSkill"}}</div>
+                <div class="charprogressatttypebnt">{{localize "CRADLE.System.SPR"}}</div>
             </a>
         </nav>
     </div>
@@ -66,70 +47,47 @@
                             <th class="charprogressattdivider1"></th>
                             <th class="charprogressattstatvalue">Bonus Value</th>
                             <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">End Value</th>
-                            <th class="charprogressattstatbnt"></th>
-                            <th class="charprogressattstatcost">Cost</th>
-                            <th class="charprogressattstatvalue">Max Value</th>
+                            <th class="charprogressattstatvalue">Total Value</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="charprogressatttrdiv"></tr>
                         <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Constitution</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
+                            <td class="charprogressattlbl">{{localize "CRADLE.System.STR"}}</td>
+                        
+                            <td class="charprogressattstatvalue">
+                                <input class="charprogressattinput" type="number" name="system.abilityScores.physical.strength.base"
+                                    value="{{system.abilityScores.physical.strength.base}}">
+                            </td>
                             <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
+                        
+                            <td class="charprogressattstatvalue">
+                                <input class="charprogressattinput" type="number" name="system.abilityScores.physical.strength.raised"
+                                    value="{{system.abilityScores.physical.strength.raised}}">
+                            </td>
                             <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
+                        
+                            <td class="charprogressattstatvalue">
+                                <input class="charprogressattinput" type="number" name="system.abilityScores.physical.strength.bonus"
+                                    value="{{system.abilityScores.physical.strength.bonus}}">
+                            </td>
                             <td class="charprogressattdivider1">=</td>
                             <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
+                                    value="{{system.abilityScores.physical.strength.total}}" disabled></td>
                         </tr>
                         <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Strength</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
+                            <td class="charprogressattlbl">{{localize "CRADLE.System.AGI"}}</td>
+                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.physical.agility.base"
+                                    value="{{system.abilityScores.physical.agility.base}}"></td>
                             <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
+                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.physical.agility.raised"
+                                    value="{{system.abilityScores.physical.agility.raised}}"></td>
                             <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
+                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.physical.agility.bonus"
+                                    value="{{system.abilityScores.physical.agility.bonus}}"></td>
                             <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
-                        </tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Dexterity</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
+                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.physical.agility.total"
+                                    value="{{system.abilityScores.physical.agility.total}}" disabled></td>
                         </tr>
                     </tbody>
                 </table>
@@ -145,16 +103,13 @@
                             <th class="charprogressattdivider1"></th>
                             <th class="charprogressattstatvalue">Bonus Value</th>
                             <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">End Value</th>
-                            <th class="charprogressattstatbnt"></th>
-                            <th class="charprogressattstatcost">Cost</th>
-                            <th class="charprogressattstatvalue">Max Value</th>
+                            <th class="charprogressattstatvalue">Total Value</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="charprogressatttrdiv"></tr>
                         <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Wisdom</td>
+                            <td class="charprogressattlbl">{{localize "CRADLE.System.INT"}}</td>
                             <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
                                     value="20" disabled></td>
                             <td class="charprogressattdivider1">+</td>
@@ -166,14 +121,9 @@
                             <td class="charprogressattdivider1">=</td>
                             <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
                                     value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
                         </tr>
                         <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Intuition</td>
+                            <td class="charprogressattlbl">{{localize "CRADLE.System.WIL"}}</td>
                             <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
                                     value="20" disabled></td>
                             <td class="charprogressattdivider1">+</td>
@@ -185,30 +135,6 @@
                             <td class="charprogressattdivider1">=</td>
                             <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
                                     value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
-                        </tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Willpower</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
                         </tr>
                     </tbody>
                 </table>
@@ -224,16 +150,13 @@
                             <th class="charprogressattdivider1"></th>
                             <th class="charprogressattstatvalue">Bonus Value</th>
                             <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">End Value</th>
-                            <th class="charprogressattstatbnt"></th>
-                            <th class="charprogressattstatcost">Cost</th>
-                            <th class="charprogressattstatvalue">Max Value</th>
+                            <th class="charprogressattstatvalue">Total Value</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="charprogressatttrdiv"></tr>
                         <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Charisma</td>
+                            <td class="charprogressattlbl">{{localize "CRADLE.System.AWA"}}</td>
                             <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
                                     value="20" disabled></td>
                             <td class="charprogressattdivider1">+</td>
@@ -245,14 +168,9 @@
                             <td class="charprogressattdivider1">=</td>
                             <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
                                     value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
                         </tr>
                         <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Empathy</td>
+                            <td class="charprogressattlbl">{{localize "CRADLE.System.PRE"}}</td>
                             <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
                                     value="20" disabled></td>
                             <td class="charprogressattdivider1">+</td>
@@ -264,112 +182,8 @@
                             <td class="charprogressattdivider1">=</td>
                             <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
                                     value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
-                        </tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Presence</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
                         </tr>
                     </tbody>
-                </table>
-            </div>
-            <div class="tab" data-tab="tab2-4" data-group="secondary-tabs">
-                <table class="charprogressatttable">
-                    <thead>
-                        <tr>
-                            <th class="charprogressattlbl"></th>
-                            <th class="charprogressattstatvalue">Start Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Raised Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Bonus Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">End Value</th>
-                            <th class="charprogressattstatbnt"></th>
-                            <th class="charprogressattstatcost">Cost</th>
-                            <th class="charprogressattstatvalue">Max Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="charprogressatttrdiv"></tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Magic Affinity</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
-                        </tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Combat Prowess</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
-                        </tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">Creativity</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="20" disabled></td>
-                            <td class="charprogressattstatbnt"><a>
-                                    <div class="charprogressincreasbnt">+</div>
-                                </a></td>
-                            <td class="charprogressattstatcost">170 ExP</td>
-                            <td class="charprogressattstatvalue">27</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </section>
     </div>

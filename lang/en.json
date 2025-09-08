@@ -1,11 +1,28 @@
 {
-    "CRADLE" : {
-        "SystemName": "Cradle",
-        "SheetClassCharacter": "Character",
-        
-        "System":{
-            "LevelShort": "Lvl"
-        }
-    }
+  "CRADLE": {
+    "SystemName": "Cradle",
+    "SheetClassCharacter": "Character",
 
+    "System": {
+      "LevelShort": "Lvl",
+      "Save": "SAVE",
+      "PHYS": "Physical",
+      "MEN": "Mental",
+      "SPR": "Spiritual",
+      "charProg": "Character Progression",
+      "abilityProg": "Ability Scores",
+      "STR": "Strength",
+      "AGI": "Agility",
+      "INT": "Intellect",
+      "WIL": "Willpower",
+      "AWA": "Awareness",
+      "PRE": "Presenece",
+      "StrShort": "STR",
+      "AgiShort": "AGI",
+      "IntShort": "INT",
+      "WilShort": "WIL",
+      "AwaShort": "AWA",
+      "PreShort": "PRE"
+    }
+  }
 }

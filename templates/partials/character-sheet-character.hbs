@@ -4,120 +4,49 @@
         <div class="menuhrbox" style="width: 25px;">
             <hr class="menuhr">
         </div>
-        Attributes
+        {{localize "CRADLE.System.abilityProg"}}
         <div class="menuhrbox" style="flex: 1;">
             <hr class="menuhr">
         </div>
     </div>
 
     <div class="charStatfieldset" style="color: #b6031b;">
-        <h1 class="charStatlegend">Body</h1>
-        <div class="charStatBox" style="left: 12px;"><span class="charResHead">CON</span></br><span
-                class="charResValue">26</span></div>
-        <div class="charStatBox" style="left: 74px;"><span class="charResHead">STR</span></br><span
-                class="charResValue">24</span></div>
-        <div class="charStatBox" style="left: 136px;"><span class="charResHead">DEX</span></br><span
-                class="charResValue">30</span></div>
+        <h1 class="charStatlegend">{{localize "CRADLE.System.PHYS"}}</h1>
+        <div class="charStatBox" style="left: 12px;"><span class="charResHead">{{localize "CRADLE.System.StrShort"}}</span></br><span
+                class="charResValue">{{system.abilityScores.physical.strength.total}}</span></div>
+        <div class="charStatBox" style="left: 74px;"><span class="charResHead">{{localize "CRADLE.System.StrShort"}}</span></br><span
+                class="charResValue">{{system.abilityScores.physical.agility.total}}</span></div>
+        <div class="charStatBox" style="left: 136px;"><span class="charResHead">{{localize "CRADLE.System.Save"}}</span></br><span
+                class="charResValue">{{system.abilityScores.physical.agility.total}}</span></div>
     </div>
 
     <div class="charStatfieldset" style="color: #3549b8;">
-        <h1 class="charStatlegend">Mind</h1>
-        <div class="charStatBox" style="left: 12px;"><span class="charResHead">WIS</span></br><span
-                class="charResValue">22</span></div>
-        <div class="charStatBox" style="left: 74px;"><span class="charResHead">INT</span></br><span
-                class="charResValue">23</span></div>
-        <div class="charStatBox" style="left: 136px;"><span class="charResHead">WIL</span></br><span
-                class="charResValue">25</span></div>
+        <h1 class="charStatlegend">{{localize "CRADLE.System.MEN"}}</h1>
+        <div class="charStatBox" style="left: 12px;"><span class="charResHead">{{localize "CRADLE.System.IntShort"}}</span></br><span
+                class="charResValue">{{system.abilityScores.mental.intellect.total}}</span></div>
+        <div class="charStatBox" style="left: 74px;"><span class="charResHead">{{localize "CRADLE.System.WilShort"}}</span></br><span
+                class="charResValue">{{system.abilityScores.mental.willpower.total}}</span></div>
+        <div class="charStatBox" style="left: 136px;"><span class="charResHead">{{localize "CRADLE.System.Save"}}</span></br><span
+                class="charResValue">{{system.abilityScores.mental.willpower.total}}</span></div>
     </div>
 
-    <div class="charStatfieldset" style="color: #28c700;">
-        <h1 class="charStatlegend">Social</h1>
-        <div class="charStatBox" style="left: 12px;"><span class="charResHead">CHA</span></br><span
-                class="charResValue">26</span></div>
-        <div class="charStatBox" style="left: 74px;"><span class="charResHead">EMP</span></br><span
-                class="charResValue">18</span></div>
-        <div class="charStatBox" style="left: 136px;"><span class="charResHead">PRE</span></br><span
-                class="charResValue">30</span></div>
+    <div class="charStatfieldset" style="color: #9e9e9e;">
+        <h1 class="charStatlegend">{{localize "CRADLE.System.SPR"}}</h1>
+        <div class="charStatBox" style="left: 12px;"><span class="charResHead">{{localize "CRADLE.System.AwaShort"}}</span></br><span
+                class="charResValue">{{system.abilityScores.spiritual.awareness.total}}</span></div>
+        <div class="charStatBox" style="left: 74px;"><span class="charResHead">{{localize "CRADLE.System.PreShort"}}</span></br><span
+                class="charResValue">{{system.abilityScores.spiritual.presence.total}}</span></div>
+        <div class="charStatBox" style="left: 136px;"><span class="charResHead">{{localize "CRADLE.System.Save"}}</span></br><span
+                class="charResValue">{{system.abilityScores.spiritual.presence.total}}</span></div>
     </div>
 
-    <div class="charStatfieldset" style="color: #ec9006;">
-        <h1 class="charStatlegend">Special</h1>
-        <div class="charStatBox" style="left: 12px;"><span class="charResHead">MAG</span></br><span
-                class="charResValue">30</span></div>
-        <div class="charStatBox" style="left: 74px;"><span class="charResHead">COM</span></br><span
-                class="charResValue">26</span></div>
-        <div class="charStatBox" style="left: 136px;"><span class="charResHead">CRE</span></br><span
-                class="charResValue">18</span></div>
+    <div class='form-group subMain'>
+    <div class='menuhrbox' style='width: 25px;'>
+      <hr class='menuhr' />
     </div>
-
-    <div class="form-group subMain">
-        <div class="menuhrbox" style="width: 25px;">
-            <hr class="menuhr">
-        </div>
-        Character Details
-        <div class="menuhrbox" style="flex: 1;">
-            <hr class="menuhr">
-        </div>
+    Actions
+    <div class='menuhrbox' style='flex: 1;'>
+      <hr class='menuhr' />
     </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Race</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Background</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Homeregion</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Alignment</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Title</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Nickname</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Age</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Family</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Height</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Weight</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Eye Color</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
-    <div class="charinputhalfbox">
-        <div class="charinputlbl">Hair Color</div>
-        <div class="charinputbox"><input class="charinputhalf" type="text" disabled></div>
-    </div>
-
+  </div>
 </div>
