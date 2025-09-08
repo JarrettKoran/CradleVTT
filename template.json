@@ -1,0 +1,22 @@
+{
+    "Actor": {},
+    "Item": {
+        "types":[
+            "weapon", "consumable"
+        ],
+        "templates":{
+            "itemDescription": {
+                "descrription":""
+            }
+        },
+        "weapon":{
+            "attackWith":"melee",
+            "damage":0,
+            "reach":"5ft"
+        },
+        "consumable":{
+            "uses":1,
+            "diceValue": "none"
+        }
+    }
+}
