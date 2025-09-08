@@ -1,17 +1,18 @@
 {
-    "name":"cradle",
+    "id":"cradle",
     "title": "Iteration 110 Cradle",
     "description": "The world of Iteration 110 Cradle in Foundry VTT",
+    "version": "0.0.1",
     "authors": [
         {
             "name": "Jonah",
             "discord": "jonahrhed"
         }
     ],
-    "compatability":{
-        "minimum": 13,
+    "compatibility":{
+        "minimum": "13",
         "verified": "13.348",
-        "maximum": 13
+        "maximum": "13"
     },
     "esmodules": [
         "cradle.js"
@@ -34,9 +35,9 @@
         "distance": 5,
         "units": "ft"
     }, 
-    "url": "",
-    "manifest": "",
-    "download":"",
     "primaryTokenAttribute": "hitPoints",
-    "initiative": "1d20 + @agi"
+    "initiative": "1d20 + @agi",
+    "url": "https://github.com/JarrettKoran/CradleVTT.git",
+    "manifest": "https://github.com/JarrettKoran/CradleVTT.git/releases/latest/download/system.json",
+    "download":"https://github.com/JarrettKoran/CradleVTT.git/releases/download/v0.0.1/system.zip"
 }

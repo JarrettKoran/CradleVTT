@@ -1,0 +1,91 @@
+import { CRADLE } from './modules/config.js'
+import cradleActor from './modules/objects/cradleActor.js'
+import cradleCharacterSheet from './modules/sheets/cradleCharacterSheet.js'
+
+Hooks.once('init', async () => {
+  console.log('CRADLE | Initializing Iteration 110 Cradle')
+
+  CONGIFG.CRADLE = CRADLE
+  CONFIG.INIT = true
+  CONFIG.Actor.documentClass = cradleActor
+
+  const DocumentSheetConfig = foundry.applications.apps.DocumentSheetConfig
+  DocumentSheetConfig.uregisterSheet(
+    Actor,
+    'core',
+    foundry.appv1.sheets.ActorSheet,
+  )
+  DocumentSheetConfig.registerSheet(Actor, 'cradle', cradleCharacterSheet, {
+    types: ['character'],
+    makeDefault: true,
+    label: 'CRADLE.SheetClassCharacter',
+  })
+
+  preloadHandlebardsTemplates()
+  registerHandlebarsHelpers()
+})
+
+Hooks.once('ready', async () => {
+  CONFIG.INIT = false
+  if (!game.user.isGM) return
+})
+
+function preloadHandlebardsTemplates() {
+  const templatePaths = [
+    'systems/cradle/templates/partials/character-sheet-character.hbs',
+    'systems/cradle/templates/partials/character-sheet-background.hbs',
+    'systems/cradle/templates/partials/character-sheet-skill.hbs',
+    'systems/cradle/templates/partials/character-sheet-combat.hbs',
+    'systems/cradle/templates/partials/character-sheet-progression.hbs',
+  ]
+
+  return foundry.applications.handlebars.loadTemplates(templatePaths)
+}
+
+function registerHandlebarsHelpers() {
+  Handlebars.registerHelper('equals', function (v1, v2) {
+    return v1 === v2
+  })
+  Handlebars.registerHelper('contains', function (element, search) {
+    return element.includes(search)
+  })
+  Handlebars.registerHelper('concat', function (s1, s2, s3 = '') {
+    return s1 + s2 + s3
+  })
+  Handlebars.registerHelper('isGreater', function (p1, p2) {
+    return p1 > p2
+  })
+  Handlebars.registerHelper('isEqualORGreater', function (p1, p2) {
+    return p1 >= p2
+  })
+  Handlebars.registerHelper('ifOR', function (conditional1, conditional2) {
+    return conditional1 || conditional2
+  })
+  Handlebars.registerHelper('doLog', function (value) {
+    return console.log(value)
+  })
+  Handlebars.registerHelper('toBoolean', function (string) {
+    return string === 'true'
+  })
+  Handlebars.registerHelper('for', function (from, to, incr, content) {
+    let result = ''
+
+    for (let i = from; i < to; i += incr) result += content.fn(i)
+
+    return result
+  })
+  Handlebars.registerHelper('times', function (n, content) {
+    let result = ''
+
+    for (let i = 0; i < n; i++) result += content.fn(i)
+
+    return result
+  })
+  Handlebars.registerHelper('notEmpty', function (value) {
+    if (value == 0 || value == '0') return true
+    if (value == null || value == '') return false
+    return true
+  })
+}
+
+// General Functions

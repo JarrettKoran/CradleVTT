@@ -1,0 +1,11 @@
+{
+    "CRADLE" : {
+        "SystemName": "Cradle",
+        "SheetClassCharacter": "Character",
+        
+        "System":{
+            "LevelShort": "Lvl"
+        }
+    }
+
+}

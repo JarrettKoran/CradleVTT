@@ -1,22 +1,117 @@
 {
-    "Actor": {},
+    "Actor": {
+        "types":[
+            "character"
+        ],
+        "character": {
+            "race": 0,
+            "background":0,
+            "bloodline":0,
+            "charDetails": {
+                "name": "",
+                "age": 25,
+                "height": 6,
+                "weight": 225,
+                "hairColo": "black",
+                "eyeColo": "brown",
+                "alignment": "",
+                "family": "",
+                "appearance": "",
+                "backstory": "",
+                "goals": ""
+            },
+            "class":{
+                "level": "",
+                "path": "",
+                "techniques":1
+            },
+            "abiltiyScores":{
+                "phsyical": {
+                    "strength":
+                    {
+                        "start":0,
+                        "raised":0,
+                        "bonus":0
+                    },
+                    "agility":
+                    {
+                        "start":0,
+                        "raised":0,
+                        "bonus":0
+                    }
+                },
+                "mental": {
+                    "intellect":
+                    {
+                        "start":0,
+                        "raised":0,
+                        "bonus":0
+                    },
+                    "willpower":
+                    {
+                        "start":0,
+                        "raised":0,
+                        "bonus":0
+                    }
+                },
+                "spiritual": {
+                    "awareness":
+                    {
+                        "start":0,
+                        "raised":0,
+                        "bonus":0
+                    },
+                    "presence":
+                    {
+                        "start":0,
+                        "raised":0,
+                        "bonus":0
+                    }
+                }
+            },
+            "baseValues": {
+                "health":{
+                    "value":0,
+                    "max":0,
+                    "temp":0,
+                    "recoveryDie":0
+                },
+                "madra":{
+                    "value":0,
+                    "max":0,
+                    "temp":0,
+                    "strain":0
+                },
+                "armorClass":{
+                    "physical":10,
+                    "mental":10,
+                    "spiritual":10
+                },
+                "focus":0
+            }
+            
+        }
+    },
     "Item": {
         "types":[
             "weapon", "consumable"
         ],
         "templates":{
-            "itemDescription": {
-                "descrription":""
+            "generalItems": {
+                "weight": 0,
+                "value": 0,
+                "descrription": ""
             }
         },
         "weapon":{
-            "attackWith":"melee",
+            "templates": ["generalItems"],
+            "attack":"melee",
             "damage":0,
             "reach":"5ft"
         },
         "consumable":{
-            "uses":1,
-            "diceValue": "none"
+            "templates": ["generalItems"],
+            "uses":1
         }
     }
 }
