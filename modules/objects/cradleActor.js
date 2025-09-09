@@ -51,9 +51,7 @@ export default class cradleActor extends Actor {
     console.log('wadu hek', changed);
     const physicalScores = changed.system.abilityScores.physical;
 
-    // Check if strength scores are being updated
     if (physicalScores?.strength) {
-      // Get the current values from the actor, and merge in any changes
       const base =
         physicalScores.strength.base ??
         this.system.abilityScores.physical.strength.base;
@@ -64,7 +62,6 @@ export default class cradleActor extends Actor {
         physicalScores.strength.bonus ??
         this.system.abilityScores.physical.strength.bonus;
 
-      // Calculate the new total and embed it in the update data
       foundry.utils.setProperty(
         changed,
         'system.abilityScores.physical.strength.total',

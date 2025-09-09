@@ -9,12 +9,7 @@ Hooks.once('init', async () => {
   CONFIG.INIT = true;
   CONFIG.Actor.documentClass = cradleActor;
 
-  /**
-   * A handlebars helper to calculate the width of a bar.
-   * Usage: {{barWidth value max}}
-   */
   Handlebars.registerHelper('barWidth', (value, max) => {
-    // Ensure value and max are numbers and max is not zero
     const numValue = Number(value) || 0;
     const numMax = Number(max) || 0;
 
@@ -22,7 +17,6 @@ Hooks.once('init', async () => {
       return 0;
     }
 
-    // Calculate percentage, clamp it between 0 and 100, and round it
     const pct = Math.round((numValue / numMax) * 100);
     return Math.clamp(pct, 0, 100);
   });
@@ -37,6 +31,17 @@ Hooks.once('init', async () => {
     types: ['character'],
     makeDefault: true,
     label: 'CRADLE.SheetClassCharacter',
+  });
+
+  DocumentSheetConfig.unregisterSheet(
+    Item,
+    'core',
+    foundry.appv1.sheets.ItemSheet,
+  );
+  DocumentSheetConfig.registerSheet(Actor, 'cradle', cradleClassSheet, {
+    types: ['class'],
+    makeDefault: true,
+    label: 'CRADLE.SheetClassItem',
   });
 
   preloadHandlebardsTemplates();

@@ -98,4 +98,24 @@ export default class cradleCharacterSheet extends api.HandlebarsApplicationMixin
     });
     tabs2.bind(this.element);
   }
+
+  /**
+   * Handle dropping an item onto the character sheet.
+   * @override
+   */
+  async _onDropItem(event, data) {
+    if (!this.isEditable) return;
+
+    const item = await Item.fromDropData(data);
+
+    if (item.type === 'class') {
+      const hasClass = this.actor.items.some(i => i.type === 'class');
+      if (hasClass) {
+        ui.notifications.warn('This character can only have one class.');
+        return;
+      }
+    }
+
+    return super._onDropItem(event, data);
+  }
 }

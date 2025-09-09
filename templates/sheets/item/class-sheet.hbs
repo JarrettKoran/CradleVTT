@@ -1,0 +1,70 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <img
+      class='profile-img'
+      src='{{item.img}}'
+      data-edit='img'
+      title='{{item.name}}'
+    />
+    <div class='header-fields'>
+      <h1 class='charname'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='Class Name'
+        /></h1>
+    </div>
+  </header>
+
+  <main class='sheet-body'>
+    <div class='form-group'>
+      <label>Description</label>
+      <div class='form-fields'>
+        {{editor
+          system.description
+          target='system.description'
+          button=true
+          owner=owner
+          editable=editable
+        }}
+      </div>
+    </div>
+
+    <hr />
+
+    <div class='features-list'>
+      <div class='features-header'>
+        <h3>Class Features</h3>
+        <a class='feature-control feature-add'><i class='fa-solid fa-plus'></i>
+          Add Feature</a>
+      </div>
+
+      <ol class='item-list'>
+        {{#each system.features as |feature key|}}
+          <li class='feature-item'>
+            <input
+              class='feature-name'
+              type='text'
+              name='system.features.{{key}}.name'
+              value='{{feature.name}}'
+            />
+            <input
+              class='feature-level'
+              type='number'
+              name='system.features.{{key}}.level'
+              value='{{feature.level}}'
+            />
+            <a
+              class='feature-control feature-delete'
+              data-feature-id='{{key}}'
+            ><i class='fa-solid fa-trash'></i></a>
+            <textarea
+              class='feature-description'
+              name='system.features.{{key}}.description'
+            >{{feature.description}}</textarea>
+          </li>
+        {{/each}}
+      </ol>
+    </div>
+  </main>
+</form>
