@@ -14,7 +14,7 @@
       "PHYS": "Physical",
       "MEN": "Mental",
       "SPR": "Spiritual",
-      "charProg": "Character Progression",
+      "charProg": "Class Features",
       "abilityProg": "Ability Scores",
       "STR": "Strength",
       "AGI": "Agility",
@@ -27,7 +27,10 @@
       "IntShort": "INT",
       "WilShort": "WIL",
       "AwaShort": "AWA",
-      "PreShort": "PRE"
+      "PreShort": "PRE",
+      "Skill": "Skill",
+      "Ability": "Ability",
+      "Bonus": "Bonus"
     }
   }
 }

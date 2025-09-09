@@ -87,6 +87,11 @@ export default class cradleActor extends Actor {
         'system.abilityScores.physical.agility.total',
         base + raised + bonus,
       );
+      foundry.utils.setProperty(
+        changed,
+        'system.baseValues.armorClass.physical',
+        10 + base + raised + bonus,
+      );
     }
 
     const mentalScores = changed.system.abilityScores.mental;
@@ -125,6 +130,11 @@ export default class cradleActor extends Actor {
         'system.abilityScores.physical.willpower.total',
         base + raised + bonus,
       );
+      foundry.utils.setProperty(
+        changed,
+        'system.baseValues.armorClass.mental',
+        10 + base + raised + bonus,
+      );
     }
 
     const spiritualScores = changed.system.abilityScores.spiritual;
@@ -162,6 +172,11 @@ export default class cradleActor extends Actor {
         changed,
         'system.abilityScores.physical.presence.total',
         base + raised + bonus,
+      );
+      foundry.utils.setProperty(
+        changed,
+        'system.baseValues.armorClass.spiritual',
+        10 + base + raised + bonus,
       );
     }
   }

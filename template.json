@@ -1,7 +1,7 @@
 {
   "Actor": {
-    "types": ["PlayerCharacter"],
-    "PlayerCharacter": {
+    "types": ["character"],
+    "character": {
       "race": 0,
       "background": 0,
       "bloodline": 0,
@@ -22,6 +22,44 @@
         "level": "",
         "path": "",
         "techniques": 1
+      },
+      "skills": {
+        "agility": { "label": "Agility", "ability": "AGI", "bonus": 0 },
+        "athletics": { "label": "Athletics", "ability": "STR", "bonus": 0 },
+        "heavyWeaponry": {
+          "label": "Heavy Weaponry",
+          "ability": "STR",
+          "bonus": 0
+        },
+        "lightWeaponry": {
+          "label": "Light Weaponry",
+          "ability": "AGI",
+          "bonus": 0
+        },
+        "stealth": { "label": "Stealth", "ability": "AGI", "bonus": 0 },
+        "thievery": { "label": "Thievery", "ability": "AGI", "bonus": 0 },
+        "crafting": { "label": "Crafting", "ability": "INT", "bonus": 0 },
+        "concentration": {
+          "label": "Concentration",
+          "ability": "WIL",
+          "bonus": 0
+        },
+        "deduction": { "label": "Deduction", "ability": "INT", "bonus": 0 },
+        "discipline": { "label": "Discipline", "ability": "WIL", "bonus": 0 },
+        "intimidation": {
+          "label": "Intimidation",
+          "ability": "WIL",
+          "bonus": 0
+        },
+        "lore": { "label": "Lore", "ability": "INT", "bonus": 0 },
+        "medicine": { "label": "Medicine", "ability": "INT", "bonus": 0 },
+        "insight": { "label": "Insight", "ability": "AWA", "bonus": 0 },
+        "deception": { "label": "Deception", "ability": "PRE", "bonus": 0 },
+        "leadership": { "label": "Leadership", "ability": "PRE", "bonus": 0 },
+        "persuasion": { "label": "Persuasion", "ability": "PRE", "bonus": 0 },
+        "scan": { "label": "Scan", "ability": "AWA", "bonus": 0 },
+        "survival": { "label": "Survival", "ability": "AWA", "bonus": 0 },
+        "veil": { "label": "Veil", "ability": "PRE", "bonus": 0 }
       },
       "abilityScores": {
         "physical": {
@@ -93,13 +131,17 @@
     }
   },
   "Item": {
-    "types": ["weapon", "consumable"],
+    "types": ["weapon", "consumable", "class"],
     "templates": {
       "generalItems": {
         "weight": 0,
         "value": 0,
         "descrription": ""
       }
+    },
+    "class": {
+      "description": "",
+      "features": {}
     },
     "weapon": {
       "templates": ["generalItems"],

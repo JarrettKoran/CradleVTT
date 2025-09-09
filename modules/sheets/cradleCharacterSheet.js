@@ -60,6 +60,14 @@ export default class cradleCharacterSheet extends api.HandlebarsApplicationMixin
       context.levels[i] = i;
     }
 
+    context.sacredArtistClass = null;
+    for (const item of context.items) {
+      if (item.type === 'class') {
+        context.sacredArtistClass = item;
+        break;
+      }
+    }
+
     this.sheetContext = context;
 
     return context;

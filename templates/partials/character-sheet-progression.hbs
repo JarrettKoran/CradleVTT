@@ -1,189 +1,41 @@
-<div class="charSheetBox">
+<div class='charSheetBox'>
 
-    <div class="form-group subMain">
-        <div class="menuhrbox" style="width: 25px;">
-            <hr class="menuhr">
-        </div>
-        {{localize "CRADLE.System.charProg"}}
-        <div class="menuhrbox" style="flex: 1;">
-            <hr class="menuhr">
-        </div>
+  <div class='form-group subMain'>
+    <div class='menuhrbox' style='width: 25px;'>
+      <hr class='menuhr' />
     </div>
-
-    <div class="form-group subMain">
-        <div class="menuhrbox" style="width: 25px;">
-            <hr class="menuhr">
-        </div>
-        {{localize "CRADLE.System.abilityProg"}}
-        <div class="menuhrbox" style="flex: 1;">
-            <hr class="menuhr">
-        </div>
+    {{localize 'CRADLE.System.charProg'}}
+    <div class='menuhrbox' style='flex: 1;'>
+      <hr class='menuhr' />
     </div>
+  </div>
 
-    <div class="charprogressattmenubox">
-        <nav class="tabs2 menuTabs" data-group="secondary-tabs">
-            <a class="item" data-tab="tab2-1" data-group="secondary-tabs">
-                <div class="charprogressatttypebnt">{{localize "CRADLE.System.PHYS"}}</div>
-            </a>
-            <a class="item" data-tab="tab2-2" data-group="secondary-tabs">
-                <div class="charprogressatttypebnt">{{localize "CRADLE.System.MEN"}}</div>
-            </a>
-            <a class="item" data-tab="tab2-3" data-group="secondary-tabs">
-                <div class="charprogressatttypebnt">{{localize "CRADLE.System.SPR"}}</div>
-            </a>
-        </nav>
-    </div>
+  <div class='class-features-container'>
+    {{#if sacredArtistClass}}
+      <div class='form-group subMain'>
+        <div class='menuhrbox' style='width: 25px;'><hr class='menuhr' /></div>
+        {{sacredArtistClass.name}}
+        {{localize 'CRADLE.System.Features'}}
+        <div class='menuhrbox' style='flex: 1;'><hr class='menuhr' /></div>
+      </div>
 
-    <div class="charprogressattbox">
-        <section class="content2">
-            <div class="tab" data-tab="tab2-1" data-group="secondary-tabs">
-                <table class="charprogressatttable">
-                    <thead>
-                        <tr>
-                            <th class="charprogressattlbl"></th>
-                            <th class="charprogressattstatvalue">Start Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Raised Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Bonus Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Total Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="charprogressatttrdiv"></tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">{{localize "CRADLE.System.STR"}}</td>
-                            <td class="charprogressattstatvalue">
-                                <input class="charprogressattinput" type="number" name="system.abilityScores.physical.strength.base"
-                                    value="{{system.abilityScores.physical.strength.base}}">
-                            </td>
-                            <td class="charprogressattdivider1">+</td>
-                        
-                            <td class="charprogressattstatvalue">
-                                <input class="charprogressattinput" type="number" name="system.abilityScores.physical.strength.raised"
-                                    value="{{system.abilityScores.physical.strength.raised}}">
-                            </td>
-                            <td class="charprogressattdivider1">+</td>
-                        
-                            <td class="charprogressattstatvalue">
-                                <input class="charprogressattinput" type="number" name="system.abilityScores.physical.strength.bonus"
-                                    value="{{system.abilityScores.physical.strength.bonus}}">
-                            </td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="{{system.abilityScores.physical.strength.total}}" disabled></td>
-                        </tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">{{localize "CRADLE.System.AGI"}}</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.physical.agility.base"
-                                    value="{{system.abilityScores.physical.agility.base}}"></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.physical.agility.raised"
-                                    value="{{system.abilityScores.physical.agility.raised}}"></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.physical.agility.bonus"
-                                    value="{{system.abilityScores.physical.agility.bonus}}"></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.physical.agility.total"
-                                    value="{{system.abilityScores.physical.agility.total}}" disabled></td>
-                        </tr>
-                    </tbody>
-                </table>
+      <ul class='feature-list'>
+        {{#each sacredArtistClass.system.features as |feature key|}}
+          <li class='feature-item'>
+            <h4 class='feature-name'>{{feature.name}}</h4>
+            <div class='feature-description'>
+              {{{feature.description}}}
             </div>
-            <div class="tab" data-tab="tab2-2" data-group="secondary-tabs">
-                <table class="charprogressatttable">
-                    <thead>
-                        <tr>
-                            <th class="charprogressattlbl"></th>
-                            <th class="charprogressattstatvalue">Start Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Raised Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Bonus Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Total Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="charprogressatttrdiv"></tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">{{localize "CRADLE.System.INT"}}</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.mental.intellect.base"
-                                    value="{{system.abilityScores.mental.intellect.base}}"></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.mental.intellect.raised"
-                                    value="{{system.abilityScores.mental.intellect.raised}}"></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.mental.intellect.bonus"
-                                    value="{{system.abilityScores.mental.intellect.bonus}}"></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="{{system.abilityScores.mental.intellect.total}}" disabled></td>
-                        </tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">{{localize "CRADLE.System.WIL"}}</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.mental.willpower.base"
-                                    value="{{system.abilityScores.mental.willpower.base}}"></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.mental.willpower.raised"
-                                    value="{{system.abilityScores.mental.willpower.raised}}"></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.mental.willpower.bonus"
-                                    value="{{system.abilityScores.mental.willpower.bonus}}"></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="{{system.abilityScores.mental.willpower.total}}" disabled></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="tab" data-tab="tab2-3" data-group="secondary-tabs">
-                <table class="charprogressatttable">
-                    <thead>
-                        <tr>
-                            <th class="charprogressattlbl"></th>
-                            <th class="charprogressattstatvalue">Start Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Raised Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Bonus Value</th>
-                            <th class="charprogressattdivider1"></th>
-                            <th class="charprogressattstatvalue">Total Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="charprogressatttrdiv"></tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">{{localize "CRADLE.System.AWA"}}</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.spiritual.awareness.base"
-                                    value="{{system.abilityScores.spiritual.awareness.base}}"></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.spiritual.awareness.raised"
-                                    value="{{system.abilityScores.spiritual.awareness.raised}}"></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.spiritual.awareness.bonus"
-                                    value="{{system.abilityScores.spiritual.awareness.bonus}}"></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="{{system.abilityScores.spiritual.awareness.total}}" disabled></td>
-                        </tr>
-                        <tr class="charprogressatttr">
-                            <td class="charprogressattlbl">{{localize "CRADLE.System.PRE"}}</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.spiritual.presence.base"
-                                    value="{{system.abilityScores.spiritual.presence.base}}"></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.spiritual.presence.raised"
-                                    value="{{system.abilityScores.spiritual.presence.raised}}"></td>
-                            <td class="charprogressattdivider1">+</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number" name="system.abilityScores.spiritual.presence.bonus"
-                                    value="{{system.abilityScores.spiritual.presence.bonus}}"></td>
-                            <td class="charprogressattdivider1">=</td>
-                            <td class="charprogressattstatvalue"><input class="charprogressattinput" type="number"
-                                    value="{{system.abilityScores.spiritual.presence.total}}" disabled></td>
-                        </tr>
-                    </tbody>
-            </div>
-        </section>
-    </div>
+          </li>
+        {{/each}}
+      </ul>
+
+    {{else}}
+      <div class='no-class-prompt'>
+        Drag and drop the "Sacred Artist" class item onto this sheet to see its
+        features.
+      </div>
+    {{/if}}
+  </div>
+
 </div>

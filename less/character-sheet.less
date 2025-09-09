@@ -369,6 +369,79 @@
     background-color: silver;
   }
 
+  .skills-container {
+    padding: 10px;
+  }
+
+  .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      text-align: left;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #e99d76; // Using your theme color
+    }
+
+    td {
+      padding: 5px 2px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    // Style the bonus input field
+    input[type='number'] {
+      width: 60px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      border-radius: 3px;
+
+      &:focus {
+        border-color: #e99d76;
+        outline: none;
+      }
+    }
+  }
+
+  .class-features-container {
+    padding: 10px;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .feature-name {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #e99d76; // Using your theme's highlight color
+  }
+
+  .feature-description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .no-class-prompt {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
   //Main Box for Displaying Content in Sheet
   .contentBox {
     float: left;

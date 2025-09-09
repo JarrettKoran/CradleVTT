@@ -1,12 +1,38 @@
-<div class="charSheetBox">
+<div class='charSheetBox'>
 
-    <div class="form-group subMain">
-        <div class="menuhrbox" style="width: 25px;">
-            <hr class="menuhr">
-        </div>
-        Skills
-        <div class="menuhrbox" style="flex: 1;">
-            <hr class="menuhr">
-        </div>
+  <div class='form-group subMain'>
+    <div class='menuhrbox' style='width: 25px;'>
+      <hr class='menuhr' />
     </div>
+    Skills
+    <div class='menuhrbox' style='flex: 1;'>
+      <hr class='menuhr' />
+    </div>
+  </div>
+  <div class='skills-container'>
+    <table class='skills-table'>
+      <thead>
+        <tr>
+          <th>{{localize 'CRADLE.System.Skill'}}</th>
+          <th>{{localize 'CRADLE.System.Ability'}}</th>
+          <th>{{localize 'CRADLE.System.Bonus'}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each system.skills as |skill key|}}
+          <tr>
+            <td>{{skill.label}}</td>
+            <td>{{skill.ability}}</td>
+            <td>
+              <input
+                type='number'
+                name='system.skills.{{key}}.bonus'
+                value='{{skill.bonus}}'
+              />
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 </div>

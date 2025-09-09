@@ -306,6 +306,65 @@
 .cradle.sheet.characterSheet .ressBarLuck {
   background-color: silver;
 }
+.cradle.sheet.characterSheet .skills-container {
+  padding: 10px;
+}
+.cradle.sheet.characterSheet .skills-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cradle.sheet.characterSheet .skills-table th {
+  text-align: left;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #e99d76;
+}
+.cradle.sheet.characterSheet .skills-table td {
+  padding: 5px 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.cradle.sheet.characterSheet .skills-table input[type='number'] {
+  width: 60px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 3px;
+}
+.cradle.sheet.characterSheet .skills-table input[type='number']:focus {
+  border-color: #e99d76;
+  outline: none;
+}
+.cradle.sheet.characterSheet .class-features-container {
+  padding: 10px;
+}
+.cradle.sheet.characterSheet .feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cradle.sheet.characterSheet .feature-item {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.cradle.sheet.characterSheet .feature-item:last-child {
+  border-bottom: none;
+}
+.cradle.sheet.characterSheet .feature-name {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #e99d76;
+}
+.cradle.sheet.characterSheet .feature-description {
+  font-size: 14px;
+  line-height: 1.4;
+}
+.cradle.sheet.characterSheet .no-class-prompt {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+}
 .cradle.sheet.characterSheet .contentBox {
   float: left;
   width: 430px;
