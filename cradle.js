@@ -38,7 +38,7 @@ Hooks.once('init', async () => {
     'core',
     foundry.appv1.sheets.ItemSheet,
   );
-  DocumentSheetConfig.registerSheet(Actor, 'cradle', cradleClassSheet, {
+  DocumentSheetConfig.registerSheet(Item, 'cradle', cradleClassSheet, {
     types: ['class'],
     makeDefault: true,
     label: 'CRADLE.SheetClassItem',
@@ -60,6 +60,7 @@ function preloadHandlebardsTemplates() {
     'systems/cradle/templates/partials/character-sheet-skill.hbs',
     'systems/cradle/templates/partials/character-sheet-combat.hbs',
     'systems/cradle/templates/partials/character-sheet-progression.hbs',
+    // 'systems/cradle/templates/partials/character-sheet-edit.hbs',
   ];
 
   return foundry.applications.handlebars.loadTemplates(templatePaths);
