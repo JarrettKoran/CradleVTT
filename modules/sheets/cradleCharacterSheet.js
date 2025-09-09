@@ -55,7 +55,10 @@ export default class cradleCharacterSheet extends api.HandlebarsApplicationMixin
       effects: baseData.document.effects,
     };
 
-    context = this.calculateAbilityScores(context);
+    context.levels = {};
+    for (let i = 1; i <= 20; i++) {
+      context.levels[i] = i;
+    }
 
     this.sheetContext = context;
 
@@ -86,53 +89,5 @@ export default class cradleCharacterSheet extends api.HandlebarsApplicationMixin
       },
     });
     tabs2.bind(this.element);
-  }
-
-  calculateAbilityScores(context) {
-    console.log('fuck shroud', context);
-
-    let str =
-      context.system.abilityScores.physical.strength.base +
-      context.system.abilityScores.physical.strength.raised +
-      context.system.abilityScores.physical.strength.bonus;
-
-    context.system.abilityScores.physical.strength.total = str;
-
-    let agi =
-      context.system.abilityScores.physical.agility.base +
-      context.system.abilityScores.physical.agility.raised +
-      context.system.abilityScores.physical.agility.bonus;
-
-    context.system.abilityScores.physical.agility.total = agi;
-
-    let int =
-      context.system.abilityScores.mental.intellect.base +
-      context.system.abilityScores.mental.intellect.raised +
-      context.system.abilityScores.mental.intellect.bonus;
-
-    context.system.abilityScores.mental.intellect.total = int;
-
-    let wil =
-      context.system.abilityScores.mental.willpower.base +
-      context.system.abilityScores.mental.willpower.raised +
-      context.system.abilityScores.mental.willpower.bonus;
-
-    context.system.abilityScores.mental.willpower.total = wil;
-
-    let awa =
-      context.system.abilityScores.spiritual.awareness.base +
-      context.system.abilityScores.spiritual.awareness.raised +
-      context.system.abilityScores.spiritual.awareness.bonus;
-
-    context.system.abilityScores.spiritual.awareness.total = awa;
-
-    let pre =
-      context.system.abilityScores.spiritual.presence.base +
-      context.system.abilityScores.spiritual.presence.raised +
-      context.system.abilityScores.spiritual.presence.bonus;
-
-    context.system.abilityScores.spiritual.presence.total = pre;
-
-    return context;
   }
 }

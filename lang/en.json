@@ -5,6 +5,11 @@
 
     "System": {
       "LevelShort": "Lvl",
+      "HP": "Hit Points",
+      "MP": "Madra",
+      "FP": "Focus Points",
+      "SP": "Strain",
+      "AC": "AC",
       "Save": "SAVE",
       "PHYS": "Physical",
       "MEN": "Mental",

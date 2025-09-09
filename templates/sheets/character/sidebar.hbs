@@ -3,56 +3,55 @@
 
         <div class="imgBox">
             <img class="charImg" src="{{actor.img}}" data-edit="img" data-action="editImage" title="{{actor.name}}">
-            <div class="imgOverlay">
-                <div class="charInitiative">4</div>
-                <div class="charRes1 charResFirst"><span class="charResHead">PHYS AC</span></br><span
-                        class="charResValue">10</span></div>
-                <div class="charRes1"><span class="charResHead">MEN AC</span></br><span class="charResValue">10</span>
-                </div>
-            </div>
-            <div class="charRes1 charResMiddle"><span class="charResHead">SPR AC</span></br><span
-                    class="charResValue">10</span></div>
-        </div>
-
-        <div class="sideBarFill1"></div>
-
-        <div class="ressBarBox">
-            <div class="ressBarHeader">Health</div>
-            <div class="ressBar">
-                <div class="ressBarBar ressBarHealth" style="width: 20%;"></div>
-            </div>
-            <div class="ressBarValue">1 / 1</div>
         </div>
 
         <div class="ressBarBox">
-            <div class="ressBarHeader">Madra</div>
+            <div class="ressBarHeader">{{localize "CRADLE.System.HP"}}</div>
             <div class="ressBar">
-                <div class="ressBarBar ressBarStamina" style="width: 20%;"></div>
+                <div class="ressBarBar ressBarHealth" style="width: {{barWidth system.baseValues.health.value system.baseValues.health.max}}%;"></div>
             </div>
-            <div class="ressBarValue">1 / 1</div>
+            <div class="ressBarValue">
+                <input type="number" name="system.baseValues.health.value" value="{{system.baseValues.health.value}}" />
+                <span>/</span>
+                <input type="number" name="system.baseValues.health.max" value="{{system.baseValues.health.max}}" />
+            </div>
         </div>
 
         <div class="ressBarBox">
-            <div class="ressBarHeader">Focus</div>
+            <div class="ressBarHeader">{{localize "CRADLE.System.MP"}}</div>
             <div class="ressBar">
-                <div class="ressBarBar ressBarMana" style="width: 20%;"></div>
+                <div class="ressBarBar ressBarStamina" style="width: {{barWidth system.baseValues.madra.value system.baseValues.madra.max}}%;"></div>
             </div>
-            <div class="ressBarValue">1 / 1</div>
+            <div class="ressBarValue">
+                <input type="number" name="system.baseValues.madra.value" value="{{system.baseValues.madra.value}}" />
+                <span>/</span>
+                <input type="number" name="system.baseValues.madra.max" value="{{system.baseValues.madra.max}}" />
+            </div>
         </div>
 
         <div class="ressBarBox">
-            <div class="ressBarHeader">Strain</div>
+            <div class="ressBarHeader">{{localize "CRADLE.System.FP"}}</div>
             <div class="ressBar">
-                <div class="ressBarBar ressBarLuck" style="width: 20%;"></div>
+                <div class="ressBarBar ressBarMana" style="width: {{barWidth system.baseValues.focus.value system.baseValues.focus.max}}%;"></div>
             </div>
-            <div class="ressBarValue">1 / 10</div>
+            <div class="ressBarValue">
+                <input type="number" name="system.baseValues.focus.value" value="{{system.baseValues.focus.value}}" />
+                <span>/</span>
+                <input type="number" name="system.baseValues.focus.max" value="{{system.baseValues.focus.max}}" />
+            </div>
         </div>
 
-        <div class="sideBarFill2"></div>
-
-        <div class="sideBarFill3"></div>
-
-    </div>
+        <div class="ressBarBox">
+            <div class="ressBarHeader">{{localize "CRADLE.System.SP"}}</div>
+            <div class="ressBar">
+                <div class="ressBarBar ressBarLuck" style="width: {{barWidth system.baseValues.madra.strain 10}}%;"></div>
+            </div>
+            <div class="ressBarValue">
+                <input type="number" name="system.baseValues.madra.strain" value="{{system.baseValues.madra.strain}}" />
+                <span>/ 10</span>
+            </div>
+        </div>
+        </div>
 
     <div class="menuBox">
 

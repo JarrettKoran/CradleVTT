@@ -38,7 +38,7 @@
 .cradle.sheet.characterSheet .imgBox {
   float: left;
   width: 135px;
-  height: 175px;
+  height: 135px;
   position: relative;
   margin-left: 8px;
   margin-top: 10px;
@@ -52,7 +52,7 @@
 }
 .cradle.sheet.characterSheet .imgOverlay {
   width: 135px;
-  height: 210px;
+  height: 135px;
   position: absolute;
   top: -3px;
   left: -3px;
@@ -130,29 +130,37 @@
 }
 .cradle.sheet.characterSheet .lvlBox {
   float: right;
-  width: 52px;
-  height: 70px;
-  background-image: url(assets/img/LvlValueBorder.png);
-  background-size: contain;
-  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .cradle.sheet.characterSheet .lvlLable {
-  float: left;
-  width: 45px;
-  height: 25px;
-  padding-top: 15px;
-  padding-left: 15px;
+  width: 100%;
+  text-align: center;
   font-size: 10px;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.7);
 }
-.cradle.sheet.characterSheet .lvlValue {
-  float: left;
-  width: 30px;
-  height: 27px;
-  padding-top: 2px;
-  padding-left: 12px;
+.cradle.sheet.characterSheet select.lvlValue {
+  width: 80%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #e99d76;
+  border-radius: 3px;
+  color: white;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+  padding: 3px 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  background-size: 14px;
+  padding-right: 25px;
+  cursor: pointer;
 }
 .cradle.sheet.characterSheet .charClass {
   float: right;
@@ -172,6 +180,9 @@
   border-bottom-width: 52px;
   border-style: solid;
   margin-top: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .cradle.sheet.characterSheet .charReaSpeed {
   float: left;
@@ -209,7 +220,7 @@
 }
 .cradle.sheet.characterSheet .sideBarFill1 {
   float: left;
-  height: 65px;
+  height: 30px;
   width: 100%;
 }
 .cradle.sheet.characterSheet .sideBarFill2 {
@@ -223,9 +234,11 @@
   width: 100%;
 }
 .cradle.sheet.characterSheet .ressBarBox {
-  float: left;
-  height: 40px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  gap: 3px;
 }
 .cradle.sheet.characterSheet .ressBarHeader {
   font-size: 16px;
@@ -246,9 +259,40 @@
 }
 .cradle.sheet.characterSheet .ressBarValue {
   width: 100%;
-  padding-right: 5px;
-  text-align: right;
-  font-size: 12px;
+  padding: 2px 5px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.cradle.sheet.characterSheet .ressBarValue input[type='number'] {
+  flex-grow: 1;
+  width: 0;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: center;
+  padding: 4px;
+  cursor: text;
+  transition: all 0.2s ease-in-out;
+}
+.cradle.sheet.characterSheet .ressBarValue input[type='number']:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.cradle.sheet.characterSheet .ressBarValue input[type='number']:focus {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: #e99d76;
+  outline: none;
+  box-shadow: 0 0 5px rgba(233, 157, 118, 0.5);
+}
+.cradle.sheet.characterSheet .ressBarValue span {
+  flex-shrink: 0;
+  opacity: 0.7;
 }
 .cradle.sheet.characterSheet .ressBarHealth {
   background-color: green;
