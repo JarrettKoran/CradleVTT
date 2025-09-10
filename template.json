@@ -131,7 +131,7 @@
     }
   },
   "Item": {
-    "types": ["weapon", "consumable", "class"],
+    "types": ["weapon", "consumable", "class", "feature", "path", "technique"],
     "templates": {
       "generalItems": {
         "weight": 0,

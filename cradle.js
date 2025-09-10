@@ -33,17 +33,6 @@ Hooks.once('init', async () => {
     label: 'CRADLE.SheetClassCharacter',
   });
 
-  DocumentSheetConfig.unregisterSheet(
-    Item,
-    'core',
-    foundry.appv1.sheets.ItemSheet,
-  );
-  DocumentSheetConfig.registerSheet(Item, 'cradle', cradleClassSheet, {
-    types: ['class'],
-    makeDefault: true,
-    label: 'CRADLE.SheetClassItem',
-  });
-
   preloadHandlebardsTemplates();
   registerHandlebarsHelpers();
 });
@@ -53,6 +42,25 @@ Hooks.once('ready', async () => {
   if (!game.user.isGM) return;
 });
 
+Hooks.on('createActor', async (actor, options, userId) => {
+  if (actor.type === 'character' && game.user.id === userId) {
+    const compendium = game.packs.get('cradle.classes');
+    if (!compendium) {
+      console.error('Cradle | Could not find the class compendium!');
+      return;
+    }
+
+    const classItem = await compendium.getDocument(
+      compendium.index.find(i => i.name === 'Sacred Artist')?._id,
+    );
+
+    if (classItem) {
+      await actor.createEmbeddedDocuments('Item', [classItem.toObject()]);
+      ui.notifications.info(`Added "Sacred Artist" class to ${actor.name}.`);
+    }
+  }
+});
+
 function preloadHandlebardsTemplates() {
   const templatePaths = [
     'systems/cradle/templates/partials/character-sheet-character.hbs',
@@ -60,7 +68,7 @@ function preloadHandlebardsTemplates() {
     'systems/cradle/templates/partials/character-sheet-skill.hbs',
     'systems/cradle/templates/partials/character-sheet-combat.hbs',
     'systems/cradle/templates/partials/character-sheet-progression.hbs',
-    // 'systems/cradle/templates/partials/character-sheet-edit.hbs',
+    'systems/cradle/templates/partials/character-sheet-edit.hbs',
   ];
 
   return foundry.applications.handlebars.loadTemplates(templatePaths);
@@ -111,5 +119,3 @@ function registerHandlebarsHelpers() {
     return true;
   });
 }
-
-// General Functions
