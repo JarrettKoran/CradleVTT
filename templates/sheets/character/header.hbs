@@ -1,24 +1,38 @@
 <div class='headerBox'>
-  <div class='logoBox'>
-    <div class='logoImg'><div class='logoText'>{{localize
-          'CRADLE.SystemName'
-        }}</div></div>
-  </div>
+  {{!-- <div class='logoBox'>
+    <div class='logoImg'></div>
+    <div class='logoText'>{{localize 'CRADLE.SystemName'}}</div>
+  </div> --}}
 
   <div class='charInfoBox'>
-    <input
-      class='bigInputText'
-      type='text'
-      name='name'
-      value='{{actor.name}}'
-    />
-    <div class='lvlBox'>
-      <div class='lvlLable'>{{localize 'CRADLE.System.LevelShort'}}</div>
-
-      <select class='lvlValue' name='system.class.level'>
-        {{{selectOptions levels selected=system.class.level}}}
-      </select>
+    <div class='input-group'>
+      <label for='charName'>{{localize 'CRADLE.System.Name'}}</label>
+      <input
+        class='bigInputText'
+        id='charName'
+        type='text'
+        name='name'
+        value='{{actor.name}}'
+      />
     </div>
-    <div class='charPath'>{{system.class.path}}</div>
+
+    <div class='charDetailsBox'>
+      <div class='input-group'>
+        <label for='charPath'>{{localize 'CRADLE.System.Path'}}</label>
+        <input
+          class='charPathInput'
+          id='charPath'
+          type='text'
+          name='system.class.path'
+          value='{{system.class.path}}'
+        />
+      </div>
+      <div class='lvlBox'>
+        <label for='charPath'>{{localize 'CRADLE.System.Level'}}</label>
+        <select class='lvlValue' name='system.class.level'>
+          {{{selectOptions levels selected=system.class.level}}}
+        </select>
+      </div>
+    </div>
   </div>
 </div>

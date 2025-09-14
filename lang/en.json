@@ -4,7 +4,7 @@
     "SheetClassCharacter": "Character",
 
     "System": {
-      "LevelShort": "Lvl",
+      "Level": "Advancement",
       "HP": "Hit Points",
       "MP": "Madra",
       "FP": "Focus Points",
@@ -30,7 +30,9 @@
       "PreShort": "PRE",
       "Skill": "Skill",
       "Ability": "Ability",
-      "Bonus": "Bonus"
+      "Bonus": "Bonus",
+      "Name": "Character Name",
+      "Path": "Sacred Arts Path"
     }
   }
 }

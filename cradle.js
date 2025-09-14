@@ -1,6 +1,7 @@
 import { CRADLE } from './modules/config.js';
 import cradleActor from './modules/objects/cradleActor.js';
 import cradleCharacterSheet from './modules/sheets/cradleCharacterSheet.js';
+import cradleClassSheet from './modules/sheets/cradleClassSheet.js';
 
 Hooks.once('init', async () => {
   console.log('CRADLE | Initializing Iteration 110 Cradle');
@@ -31,6 +32,17 @@ Hooks.once('init', async () => {
     types: ['character'],
     makeDefault: true,
     label: 'CRADLE.SheetClassCharacter',
+  });
+
+  DocumentSheetConfig.unregisterSheet(
+    Item,
+    'core',
+    foundry.appv1.sheets.ItemSheet,
+  );
+  DocumentSheetConfig.registerSheet(Item, 'cradle', cradleClassSheet, {
+    types: ['class'],
+    makeDefault: true,
+    label: 'CRADLE.SheetItemClass',
   });
 
   preloadHandlebardsTemplates();

@@ -1,6 +1,21 @@
 const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
 
+const ADVANCEMENT_LEVELS = [
+  'Copper',
+  'Iron',
+  'Jade',
+  'Low Gold',
+  'High Gold',
+  'True Gold',
+  'Underlord',
+  'Overlord',
+  'Archlord',
+  'Herald',
+  'Sage',
+  'Monarch',
+];
+
 export default class cradleCharacterSheet extends api.HandlebarsApplicationMixin(
   sheets.ActorSheetV2,
 ) {
@@ -56,8 +71,8 @@ export default class cradleCharacterSheet extends api.HandlebarsApplicationMixin
     };
 
     context.levels = {};
-    for (let i = 1; i <= 20; i++) {
-      context.levels[i] = i;
+    for (let i = 0; i <= 11; i++) {
+      context.levels[i] = ADVANCEMENT_LEVELS[i];
     }
 
     context.sacredArtistClass = null;
